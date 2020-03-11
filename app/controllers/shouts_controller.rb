@@ -4,6 +4,10 @@ class ShoutsController < ApplicationController
     redirect_to root_path, redirect_options_for(shout)
   end
 
+  def show
+    @shout = Shout.find(params[:id])
+  end
+
   def shout_params
     params.require(:shout).permit(:body)
   end
