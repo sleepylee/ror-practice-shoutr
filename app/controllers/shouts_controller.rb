@@ -9,7 +9,15 @@ class ShoutsController < ApplicationController
   end
 
   def shout_params
-    params.require(:shout).permit(:body)
+    { content: content_from_params }
+  end
+
+  def content_from_params
+    TextShout.new(content_params)
+  end
+
+  def content_params
+    params.require(:shout).require(:content).permit(:body)
   end
 
   def redirect_options_for(shout)
