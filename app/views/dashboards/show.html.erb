@@ -1,1 +1,12 @@
 <h1>Control Dashboard</h1>
+
+<%= form_for @shout do |form| %>
+  <%= form.text_field :body, placeholder: "Tweet it here", required: true %>
+  <%= form.submit "Tweeted!" %>
+<% end %>
+
+<% @shouts.each do |shout| %>
+  <div>
+    <%= shout.body %>
+  </div>
+<% end %>

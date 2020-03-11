@@ -63,3 +63,6 @@ Things you may want to cover:
   `$ rails g clearance:routes`
   Then we pointed out that we don't want to use `controller: "clearance/users"` by removing it from the routes.rb
 
+- To add a new Shout (Tweet) model with: [body] and [user](reference)
+  `$ rails g model Shout body user:references`
+  after you have ensure your migration file met expectations, run db:migrate
