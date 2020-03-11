@@ -22,3 +22,27 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+### Commands that I entered:
+- Init rails project:
+  `$ rails new shoutr -d postgresql -B -T`
+
+- Add gem `clearance` and run bundle install:
+  `$ bundle install`
+
+- Create db: 
+  `rails db:create`
+
+- Init clearance:
+  `$ rails g clearance:install`
+  * Note: to see all possible rails generator run: `$ rails g`
+
+- Migrate Database:
+  `$ rails db:migrate`
+
+- Install webpacker:
+  `$ rails webpacker:install`
+
+- Run server:
+  `$ rails s`
