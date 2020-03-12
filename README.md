@@ -66,3 +66,8 @@ Things you may want to cover:
 - To add a new Shout (Tweet) model with: [body] and [user](reference)
   `$ rails g model Shout body user:references`
   after you have ensure your migration file met expectations, run db:migrate
+
+- To update a schema of the db, says we want to enforce a field NOT null, run a new migration
+  `$ rails g migration AddNullFalseToShout`
+  then go update inside the migration file it just created: `..._add_null_false_to_shout.rb`, then db:migrate
+  `$ rails db:migrate`
