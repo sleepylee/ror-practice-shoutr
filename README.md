@@ -54,3 +54,11 @@
 - Adding new table with 2 foreign keys
   `$ rails g model Like user:references shout:references`
   Update the migration file to define index and then db:migrate
+
+- To visualize the connection between the follower and followed user, we create another table with 2 of them are foreigner keys
+  `$ rails g model FollowingRelationship follower:references followed_user:references`
+  Update the migration file to define the foreign key, then db:migrate
+
+- To add a counter of the follower (following Relationship counter), start adding a new table
+  `$ rails g migration AddFollowingRelationshipCounterCachesToUsers followed_users_count:integer followers_count:integer`
+  Update the default value of integer counter to 0 and set non-nullable, then db:migrate
