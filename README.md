@@ -71,3 +71,6 @@ Things you may want to cover:
   `$ rails g migration AddNullFalseToShout`
   then go update inside the migration file it just created: `..._add_null_false_to_shout.rb`, then db:migrate
   `$ rails db:migrate`
+
+- Install imagemagick with brew because paperclip needs it
+  `$ brew install imagemagick`
