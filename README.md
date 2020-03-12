@@ -1,30 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-### Commands that I entered:
+### Guideline:
 - Init rails project:
   `$ rails new shoutr -d postgresql -B -T`
 
@@ -74,3 +50,7 @@ Things you may want to cover:
 
 - Install imagemagick with brew because paperclip needs it
   `$ brew install imagemagick`
+
+- Adding new table with 2 foreign keys
+  `$ rails g model Like user:references shout:references`
+  Update the migration file to define index and then db:migrate
