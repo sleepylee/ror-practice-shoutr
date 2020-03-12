@@ -46,4 +46,8 @@ class User < ApplicationRecord
   def following?(user)
     followed_user_ids.include?(user.id)
   end
+
+  def timeline_shouts
+    Shout.where(user_id: followed_user_ids + [id])
+  end
 end
