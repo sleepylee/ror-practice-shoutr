@@ -1,19 +1,11 @@
 <h1>Control Dashboard</h1>
 
-<%= form_for @shout do |form| %>
-  <%= form.hidden_field :content_type, value: "TextShout" %>
-  <%= form.fields_for :content do |content_form| %>
-    <%= content_form.text_field :body, placeholder: "Tweet it here", required: true %>
-  <% end %>
-  <%= form.submit "Tweet!" %>
+<%= shout_form_for(TextShout) do |content_form| %>
+  <%= content_form.text_field :body, placeholder: "Tweet it here", required: true %>
 <% end %>
 
-<%= form_for @shout do |form| %>
-  <%= form.hidden_field :content_type, value: "PhotoShout" %>
-  <%= form.fields_for :content do |content_form| %>
-    <%= content_form.file_field :image, required: true %>
-  <% end %>
-  <%= form.submit "Tweet!" %>
+<%= shout_form_for(PhotoShout) do |content_form| %>
+  <%= content_form.file_field :image, required: true %>
 <% end %>
 
 <%= render @shouts %>
