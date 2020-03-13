@@ -5,4 +5,17 @@ class Shout < ApplicationRecord
   validates :user, presence: true
 
   delegate :username, to: :user
+
+  searchable do
+    text :content do
+      case content
+      when TextShout then
+        content.body
+      when PhotoShout then
+        content.image_file_name
+      else
+        raise "Unsupported"
+      end
+    end
+  end
 end
