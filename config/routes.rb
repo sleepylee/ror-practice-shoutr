@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :hashtags, only: [:show]
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, only: [:create]
 
